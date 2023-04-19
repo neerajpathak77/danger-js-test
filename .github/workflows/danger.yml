@@ -6,11 +6,8 @@ jobs:
     container: node:16
     name: A job to say hello
     steps:
-    - name: Hello world action step
-      id: hello
-      uses: kubowania/my-javascript-action@v1
-      with:
-        who-to-greet: 'Ania'
+    - name: Checkout deployment action
+      uses: actions/checkout@v3
     # Use the output from the `hello` step
     - name: Get the output time
       run: |
