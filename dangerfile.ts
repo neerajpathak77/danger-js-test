@@ -1,4 +1,4 @@
-import { message } from 'danger';
+import { message, danger } from 'danger';
 
-// const modifiedMD = danger.git.modified_files.join('- ');
-message(`<<<<<<<<<1------------Changed Files in this PR------------>>>>>>>`);
+const modifiedMD = danger.git.modified_files.join('- ');
+message(`<<<<====>>>>Changed Files in this PR: \n - ${modifiedMD}`);
