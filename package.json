@@ -10,7 +10,8 @@
     "lint": "eslint -f codeframe \"**/*{.js,.jsx,.ts,.tsx}\"",
     "prettier": "prettier --write \"**/*.{ts,tsx,js,css,scss,md,json,yml,d.ts}\"",
     "lint:fix": "npm run lint -- --fix",
-    "lint:prettier": "npm run lint -- --fix && npm run prettier"
+    "lint:prettier": "npm run lint -- --fix && npm run prettier",
+    "danger:test": "npm i danger && danger ci"
   },
   "author": "neeraj",
   "license": "ISC",
