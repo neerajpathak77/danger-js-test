@@ -13,6 +13,6 @@ jobs:
       run: |
         echo "The time was ${{ steps.hello.outputs.time }}"
         npm i
-        npm danger:test
+        npm run danger:test
         
       
