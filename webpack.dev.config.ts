@@ -19,7 +19,7 @@ const config: Configuration = {
     historyApiFallback: true,
     hot: true,
     open: true,
-    port: 4000
+    port: 8080
   },
   devtool: 'inline-source-map',
   entry: path.resolve(__dirname, 'frontend/src/index.tsx'),
