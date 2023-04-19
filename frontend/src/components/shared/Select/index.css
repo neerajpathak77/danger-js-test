@@ -1,0 +1,10 @@
+.list-container {
+  text-align: center;
+}
+ul.select-list {
+  color: red;
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}

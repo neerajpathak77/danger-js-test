@@ -1,0 +1,12 @@
+.container {
+  align-items: center;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.error {
+  color: red;
+  font-size: 20px;
+}
