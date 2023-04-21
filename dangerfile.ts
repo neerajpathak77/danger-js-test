@@ -13,7 +13,7 @@ his PR: \n - ${modifiedMD}`);
 
 console.log('danger--billing---> 1', danger.github.api.billing.getGithubActionsBillingOrg());
 console.log('danger--billing---> 2', danger.github.api.billing.getGithubActionsBillingUser());
-console.log('danger--billing---> 3', danger.github.api.billing.getSharedStorageBillingOrg());
+// console.log('danger--billing---> 3', danger.github.api.billing.getSharedStorageBillingOrg());
 
 
 
