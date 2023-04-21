@@ -7,13 +7,14 @@ jobs:
     name: A job to say hello
     steps:
     - name: Checkout deployment action
+      id: ewfwefw
       uses: actions/checkout@v3
     # Use the output from the `hello` step
     - name: Get the output time
       env:
         GITHUB_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
       run: |
-        echo "The time was ${{ steps.hello.outputs }}"
+        echo "The time was ${{ steps.ewfwefw.outputs }}"
         npm i
         npm run danger:test
         
