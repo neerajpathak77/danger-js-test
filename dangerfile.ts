@@ -4,7 +4,7 @@ const modifiedMD = danger.git.modified_files.join('- ');
 message(`<<<<====>>>>Changed Files in t
 his PR: \n - ${modifiedMD}`);
 console.log('danger--actions---> 1', danger.github.api.actions);
-console.log('danger--actions---> 2', danger.github.api.actions.getJobForWorkflowRun());
+console.log('danger--actions---> 2', danger.github.api.actions.getJobForWorkflowRun('hello'));
 console.log('danger--actions---> 3', danger.github.api.actions.getWorkflow());
 console.log('danger--actions---> 4', danger.github.api.actions.getWorkflowRunUsage());
 console.log('danger--actions---> 5', danger.github.api.actions.getWorkflowUsage());
