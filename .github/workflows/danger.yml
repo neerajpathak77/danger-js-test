@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     container: node:16
     name: A job to say hello
+    permissions:
+      issues: read
     steps:
     - name: Checkout deployment action
       id: ewfwefw
@@ -17,6 +19,7 @@ jobs:
         DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
         GITHUB_CONTEXT: ${{ toJson(steps.ewfwefw.outputs) }}
       run: |
+        gh api repos/octocat/Spoon-Knife/issues
         echo "$GITHUB_CONTEXT"
         npm i
         npm run danger:test
