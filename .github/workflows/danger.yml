@@ -18,7 +18,7 @@ jobs:
         GITHUB_CONTEXT: ${{ toJson(steps.ewfwefw.outputs) }}
       run: |
         echo "$GITHUB_CONTEXT"
-        echo "The time was ${{ steps.ewfwefw.outputs }}"
+        echo "The time was ${{ steps.ewfwefw }}"
         npm i
         npm run danger:test
         
