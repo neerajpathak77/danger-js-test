@@ -11,7 +11,7 @@ his PR: \n - ${modifiedMD}`);
 // console.log('danger--actions---> 6', danger.github.api.actions.listJobsForWorkflowRun());
 // console.log('danger--actions---> 6', danger.github.api.actions.listWorkflowRuns());
 
-console.log('danger--billing---> 1', danger.github.api.billing.getGithubActionsBillingOrg());
+// console.log('danger--billing---> 1', danger.github.api.billing.getGithubActionsBillingOrg());
 console.log('danger--billing---> 2', danger.github.api.billing.getGithubActionsBillingUser());
 // console.log('danger--billing---> 3', danger.github.api.billing.getSharedStorageBillingOrg());
 
@@ -19,6 +19,6 @@ console.log('danger--billing---> 2', danger.github.api.billing.getGithubActionsB
 
 
 
-console.log('danger--2', danger.github.api.billing);
+// console.log('danger--2', danger.github.api.billing);
 
 message(`<<<<====>>>>Changed Files in this PR:- ===>>>>>>>`);
