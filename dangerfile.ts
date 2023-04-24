@@ -13,12 +13,16 @@ his PR: \n - ${modifiedMD}`);
 
 // console.log('danger--billing---> 1', danger.github.api.billing.getGithubActionsBillingOrg());
 // console.log('danger--billing---> 2', danger.github);
-// console.log('danger--billing---> 3', danger.github.api.billing.getSharedStorageBillingOrg());
+console.log(
+  'danger--billing---> 3',
+  danger.github.api.actions.getJobForWorkflowRun({
+    owner: 'neerajpathak77',
+    repo: 'danger-js-test',
+    job_id: 4786122599
+  })
+);
 
-
-console.log('danger--actions---> 6', danger.github.utils);
-
-
+// console.log('danger--actions---> 6', danger.github.utils.fileLinks());
 
 // console.log('danger--2', danger.github.api.billing);
 
