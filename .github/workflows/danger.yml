@@ -21,5 +21,7 @@ jobs:
         echo "The time was ${{ steps.ewfwefw }}"
         npm i
         npm run danger:test
+        run: echo '### Hello world! 🚀' >> $GITHUB_STEP_SUMMARY
+
         
       
