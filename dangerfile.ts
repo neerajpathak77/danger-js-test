@@ -8,20 +8,21 @@ message(`<<<<====>>>>Changed Files in this PR: \n - ${modifiedMD}`);
 // console.log('danger--actions---> 4', danger.github.api.actions.getWorkflowRunUsage());
 // console.log('danger--actions---> 5', danger.github.api.actions.getWorkflowUsage());
 // console.log('danger--actions---> 6', danger.github.api.actions.listJobsForWorkflowRun());
-console.log(
-  'danger--actions---> 6',
-  danger.github.api.actions.listRepoWorkflows({
+// eslint-disable-next-line promise/catch-or-return
+danger.github.api.actions
+  .listRepoWorkflows({
     owner: 'neerajpathak77',
     repo: 'danger-js-test'
   })
-);
+  .then(d => console.log('danger--actions---> 6', d));
 
-message(
-  `<<<<====>>>>Changed Files in this PR: \n - ${danger.github.api.actions.listRepoWorkflows({
+// eslint-disable-next-line promise/catch-or-return
+danger.github.api.actions
+  .listRepoWorkflows({
     owner: 'neerajpathak77',
     repo: 'danger-js-test'
-  })}`
-);
+  })
+  .then(d => message(`<<<<====>>>>SSSSSSSS Files in this PR: \n - ${d}`));
 
 // console.log('danger--billing---> 1', danger.github.api.billing.getGithubActionsBillingOrg());
 // console.log('danger--billing---> 2', danger.github);
