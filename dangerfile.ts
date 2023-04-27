@@ -10,27 +10,6 @@ message(`<<<<====>>>>Changed Files in this PR: \n - ${modifiedMD}`);
 // console.log('danger--actions---> 5', danger.github.api.actions.getWorkflowUsage());
 // console.log('danger--actions---> 6', danger.github.api.actions.listJobsForWorkflowRun());
 // eslint-disable-next-line promise/catch-or-return
-danger.github.api.actions
-  .listRepoWorkflows({
-    owner: 'neerajpathak77',
-    repo: 'danger-js-test'
-  })
-  .then(d => console.log('danger--actions---> 6', JSON.stringify(d, null, 3)));
-
-// eslint-disable-next-line promise/catch-or-return
-danger.github.api.actions
-  .listRepoWorkflows({
-    owner: 'neerajpathak77',
-    repo: 'danger-js-test'
-  })
-  .then(d => message(`<<<<====>>>>SSSSSSSS Files in this PR: \n - ${JSON.stringify(d, null, 3)}`));
-
-danger.github.api.actions
-  .getAllowedActionsRepository({
-    owner: 'neerajpathak77',
-    repo: 'danger-js-test'
-  })
-  .then(d => message(`111111111111111 \n - ${JSON.stringify(d, null, 3)}`));
 
 danger.github.api.actions
   .getActionsCacheList({
