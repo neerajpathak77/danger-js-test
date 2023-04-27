@@ -20,7 +20,5 @@ jobs:
       run: |
         npm i
         npm run danger:test
-        run: echo '### Hello world! 🚀' >> $GITHUB_STEP_SUMMARY
-
         
       
