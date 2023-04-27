@@ -17,10 +17,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
         DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
-        GITHUB_CONTEXT: ${{ toJson(steps.ewfwefw.outputs) }}
       run: |
-        gh api repos/octocat/Spoon-Knife/issues
-        echo "$GITHUB_CONTEXT"
         npm i
         npm run danger:test
         run: echo '### Hello world! 🚀' >> $GITHUB_STEP_SUMMARY
