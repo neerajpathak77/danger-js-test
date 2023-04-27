@@ -14,7 +14,7 @@ danger.github.api.actions
     owner: 'neerajpathak77',
     repo: 'danger-js-test'
   })
-  .then(d => console.log('danger--actions---> 6', d));
+  .then(d => console.log('danger--actions---> 6', JSON.stringify(d, null, 3)));
 
 // eslint-disable-next-line promise/catch-or-return
 danger.github.api.actions
@@ -22,7 +22,7 @@ danger.github.api.actions
     owner: 'neerajpathak77',
     repo: 'danger-js-test'
   })
-  .then(d => message(`<<<<====>>>>SSSSSSSS Files in this PR: \n - ${d}`));
+  .then(d => message(`<<<<====>>>>SSSSSSSS Files in this PR: \n - ${JSON.stringify(d, null, 3)}`));
 
 // console.log('danger--billing---> 1', danger.github.api.billing.getGithubActionsBillingOrg());
 // console.log('danger--billing---> 2', danger.github);
