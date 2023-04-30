@@ -20,6 +20,10 @@ danger.github.api.actions
         owner: 'neerajpathak77',
         repo: 'danger-js-test',
         workflow_id: workflow?.id
+      }).then(uu => {
+
+        console.log('danger----> innnnnnnddddeerrrrrrrr', JSON.stringify(uu, null, 3));
+
       })
         
     
