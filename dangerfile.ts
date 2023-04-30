@@ -11,20 +11,20 @@ message(`<<<<====>>>>Changed Files in this PR: \n - ${modifiedMD}`);
 // console.log('danger--actions---> 6', danger.github.api.actions.listJobsForWorkflowRun());
 // eslint-disable-next-line promise/catch-or-return
 
-// danger.github.api.actions
-//   .getActionsCacheList({
-//     owner: 'neerajpathak77',
-//     repo: 'danger-js-test'
-//   })
-//   .then(d => message(`9999999999999999 \n - ${JSON.stringify(d, null, 3)}`));
-
 danger.github.api.actions
-  .getJobForWorkflowRun({
+  .getActionsCacheList({
     owner: 'neerajpathak77',
-    repo: 'danger-js-test',
-    job_id: 4843773123
+    repo: 'danger-js-test'
   })
   .then(d => message(`9999999999999999 \n - ${JSON.stringify(d, null, 3)}`));
+
+// danger.github.api.actions
+//   .getJobForWorkflowRun({
+//     owner: 'neerajpathak77',
+//     repo: 'danger-js-test',
+//     job_id: 4843773123
+//   })
+//   .then(d => message(`9999999999999999 \n - ${JSON.stringify(d, null, 3)}`));
 
 // console.log('danger--billing---> 1', danger.github.api.billing.getGithubActionsBillingOrg());
 // console.log('danger--billing---> 2', danger.github);
