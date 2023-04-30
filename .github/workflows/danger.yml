@@ -17,9 +17,15 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
         DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
-        TEST: ${{ github.run_id }}
+        A: ${{ github.run_id }}
+        B: ${{ github.workflow }}
+        C: ${{ github.repository }}
+        D: ${{ github.repository_owner }}
       run: |
-        echo "TEST: $TEST"
+        echo "A: $A"
+        echo "B: $B"
+        echo "C: $C"
+        echo "D: $D"
         npm i
         npm run danger:test
         
