@@ -15,14 +15,17 @@ danger.github.api.actions
     const workflow = workflows?.data?.workflows?.find(op => op.name === '.github/workflows/danger.yml');
     console.log('danger----> 11111111', JSON.stringify(workflow, null, 3));
 
-    console.log('danger----> 99999999999999', JSON.stringify(process.env.GITHUB_RUN_ID, null, 3));
+    console.log('danger----> 99999999999999', JSON.stringify(process.env, null, 3));
 
 
-    danger.github.api.actions.listJobsForWorkflowRunAttempt({
+
+
+
+    danger.github.api.actions.listJobsForWorkflowRun({
       owner: 'neerajpathak77',
       repo: 'danger-js-test',
-      run_id: process.env.GITHUB_RUN_ID
-      })
+      run_id: process.env.GITHUB_RUN_ID,
+    })
       .then(uu => {
 
           console.log('danger----> INSIDE OF THE ACTION', JSON.stringify(uu, null, 3));
