@@ -19,7 +19,7 @@ danger.github.api.actions
       .getJobForWorkflowRun({
         owner: 'neerajpathak77',
         repo: 'danger-js-test',
-        job_id: workflow.id
+        job_id: workflow.node_id
       })
       .then(d => message(`3333333 \n - ${JSON.stringify(d, null, 3)}`));
   });
