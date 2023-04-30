@@ -20,7 +20,7 @@ jobs:
         A: ${{ github.run_id }}
         B: ${{ github.workflow }}
         C: ${{ github.repository }}
-        D: ${{ github.repository_owner }}
+        D: ${{ github.job }}
       run: |
         echo "A: $A"
         echo "B: $B"
@@ -28,6 +28,6 @@ jobs:
         echo "D: $D"
         npm i
         npm run danger:test
-        
+
         
       
