@@ -12,14 +12,12 @@ message(`<<<<====>>>>Changed Files in this PR: \n - ${modifiedMD}`);
 // eslint-disable-next-line promise/catch-or-return
 
 
-console.log('danger-gvar---> 1', danger.github.thisPR.owner)
-console.log('danger-gvar---> 2', danger.github.thisPR.repo)
-console.log('danger-gvar---> 3', danger.github.pr.user)
-console.log('danger-gvar---> 4', danger.github.run_id)
+// console.log('danger-gvar---> 1', danger.github.thisPR.owner)
+// console.log('danger-gvar---> 2', danger.github.thisPR.repo)
+// console.log('danger-gvar---> 3', danger.github.pr.user)
 
-
-
-
+const args = process.argv;
+console.log('====>>>', args);
 
 danger.github.api.actions
   .getActionsCacheList({
