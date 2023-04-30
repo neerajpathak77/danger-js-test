@@ -18,6 +18,12 @@ danger.github.api.actions
   })
   .then(d => message(`9999999999999999 \n - ${JSON.stringify(d, null, 3)}`));
 
+danger.github.api.actions.getJobForWorkflowRun({
+  owner: 'neerajpathak77',
+  repo: 'danger-js-test',
+  job_id: 
+});
+
 // console.log('danger--billing---> 1', danger.github.api.billing.getGithubActionsBillingOrg());
 // console.log('danger--billing---> 2', danger.github);
 // console.log(
