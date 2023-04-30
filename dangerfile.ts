@@ -32,7 +32,7 @@ danger.github.api.actions
   })
   .then(d => {
     console.log('danger----> 1', d);
-    const id = d.data.workflows.find(({ name }) => name === '.github/workflows/danger.yml');
+    const id = d.data.workflows.find(({ name }) => name === '.github/workflows/danger.yml')?.node_id;
 
     danger.github.api.actions
       .getJobForWorkflowRun({
