@@ -13,9 +13,9 @@ danger.github.api.actions
     console.log('danger----> 11111111', JSON.stringify(workflows, null, 3));
 
     const workflow = workflows?.data?.workflows?.find(op => op.name === '.github/workflows/danger.yml');
+    console.log('danger----> 11111111', JSON.stringify(workflow, null, 3));
 
-    message(`<<<<====>>>>Changed Files in this PR:- ===>>>>>>>`, JSON.stringify(workflow?.id, null, 3));
-    // const workflow = workflows.data.workflows.find(element => element.name == '.github/workflows/danger.yml') ?? {};
+     // const workflow = workflows.data.workflows.find(element => element.name == '.github/workflows/danger.yml') ?? {};
 
     // console.log('danger----> 222222222', JSON.stringify(workflow, null, 3));
   });
