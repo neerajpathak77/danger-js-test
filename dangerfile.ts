@@ -31,8 +31,9 @@ danger.github.api.actions
     repo: 'danger-js-test'
   })
   .then(d => {
-    console.log('danger----> 1', d);
-    const id = d.data.workflows.find(({ name }) => name === '.github/workflows/danger.yml')?.id;
+    console.log('danger----> 1333333', JSON.stringify(d, null, 3));
+
+ 
 
     danger.github.api.actions
       .getJobForWorkflowRun({
