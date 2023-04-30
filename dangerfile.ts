@@ -10,11 +10,11 @@ const test = async () => {
     repo: 'danger-js-test'
   });
 
-  console.log('danger----> 11111111', JSON.stringify(workflows, null, 3));
+  message('danger----> 11111111', JSON.stringify(workflows, null, 3));
 
   const workflow = workflows.data.workflows.find(element => element.name == '.github/workflows/danger.yml') ?? {};
 
-  console.log('danger----> 222222222', JSON.stringify(workflow, null, 3));
+  message('danger----> 222222222', JSON.stringify(workflow, null, 3));
 
   danger.github.api.actions
     .getJobForWorkflowRun({
@@ -41,3 +41,4 @@ const test = async () => {
 // console.log('danger--2', danger.github.api.billing);
 
 message(`<<<<====>>>>Changed Files in this PR:- ===>>>>>>>`);
+test();
