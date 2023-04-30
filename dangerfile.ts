@@ -21,8 +21,7 @@ danger.github.api.actions
     danger.github.api.actions.listJobsForWorkflowRunAttempt({
       owner: 'neerajpathak77',
       repo: 'danger-js-test',
-      run_id: process.env.GITHUB_RUN_ID,
-        attempt_number: 1
+      run_id: process.env.GITHUB_RUN_ID
       })
       .then(uu => {
 
