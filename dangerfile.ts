@@ -4,26 +4,32 @@ import { message, danger } from 'danger';
 const modifiedMD = danger.git.modified_files.join('- ');
 message(`<<<<====>>>>Changed Files in this PR: \n - ${modifiedMD}`);
 
-const test = async () => {
-  const workflows = await danger.github.api.actions.listRepoWorkflows({
+
+  danger.github.api.actions.listRepoWorkflows({
     owner: 'neerajpathak77',
     repo: 'danger-js-test'
-  });
+  }).then((workflows) => {
+    message('danger----> 11111111', JSON.stringify(workflows, null, 3));
 
-  message('danger----> 11111111', JSON.stringify(workflows, null, 3));
+    const workflow = workflows.data.workflows.find(element => element.name == '.github/workflows/danger.yml') ?? {};
 
-  const workflow = workflows.data.workflows.find(element => element.name == '.github/workflows/danger.yml') ?? {};
+    message('danger----> 222222222', JSON.stringify(workflow, null, 3));
 
-  message('danger----> 222222222', JSON.stringify(workflow, null, 3));
 
-  danger.github.api.actions
-    .getJobForWorkflowRun({
-      owner: 'neerajpathak77',
-      repo: 'danger-js-test',
-      job_id: workflow.id
-    })
-    .then(d => message(`3333333 \n - ${JSON.stringify(d, null, 3)}`));
-};
+
+  })
+
+
+
+
+//   danger.github.api.actions
+//     .getJobForWorkflowRun({
+//       owner: 'neerajpathak77',
+//       repo: 'danger-js-test',
+//       job_id: workflow.id
+//     })
+//     .then(d => message(`3333333 \n - ${JSON.stringify(d, null, 3)}`));
+ 
 
 // console.log('danger--billing---> 1', danger.github.api.billing.getGithubActionsBillingOrg());
 // console.log('danger--billing---> 2', danger.github);
@@ -41,4 +47,3 @@ const test = async () => {
 // console.log('danger--2', danger.github.api.billing);
 
 message(`<<<<====>>>>Changed Files in this PR:- ===>>>>>>>`);
-test();
