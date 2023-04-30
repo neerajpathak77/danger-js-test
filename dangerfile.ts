@@ -15,11 +15,18 @@ danger.github.api.actions
     const workflow = workflows?.data?.workflows?.find(op => op.name === '.github/workflows/danger.yml');
     console.log('danger----> 11111111', JSON.stringify(workflow, null, 3));
 
+    console.log('danger----> github.jobJOBJON', danger.github.job);
 
-    danger.github.api.actions.getWorkflow({
+
+    
+
+
+ 
+
+    danger.github.api.actions.getWorkflowRunUsage({
         owner: 'neerajpathak77',
         repo: 'danger-js-test',
-        workflow_id: workflow?.id
+        run_id: workflow?.id
       }).then(uu => {
 
         console.log('danger----> innnnnnnddddeerrrrrrrr', JSON.stringify(uu, null, 3));
