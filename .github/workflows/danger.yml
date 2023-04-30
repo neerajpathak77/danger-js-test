@@ -27,7 +27,7 @@ jobs:
         echo "C: $C"
         echo "D: $D"
         npm i
-        npm run danger:test
+        npm run danger:test --hello=$D
 
         
       
