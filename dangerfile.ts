@@ -19,23 +19,18 @@ danger.github.api.actions
 
 
     
-
+    
 
  
 
-    danger.github.api.actions.getWorkflowRunUsage({
+    danger.github.api.actions.getJobForWorkflowRun({
         owner: 'neerajpathak77',
         repo: 'danger-js-test',
-        run_id: workflow?.id
+        job_id: 'hello_world_job'
       }).then(uu => {
 
         console.log('danger----> innnnnnnddddeerrrrrrrr', JSON.stringify(uu, null, 3));
-
-      })
-        
-    
-
-
+      });
 
     // danger.github.api.actions.getJobForWorkflowRun({
     //   owner: 'neerajpathak77',
