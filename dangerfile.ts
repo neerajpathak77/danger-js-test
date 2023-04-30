@@ -4,23 +4,18 @@ import { message, danger } from 'danger';
 const modifiedMD = danger.git.modified_files.join('- ');
 message(`<<<<====>>>>Changed Files in this PR: \n - ${modifiedMD}`);
 
-
-  danger.github.api.actions.listRepoWorkflows({
+danger.github.api.actions
+  .listRepoWorkflows({
     owner: 'neerajpathak77',
     repo: 'danger-js-test'
-  }).then((workflows) => {
-    message('danger----> 11111111', JSON.stringify(workflows, null, 3));
+  })
+  .then(workflows => {
+    console.log('danger----> 11111111', JSON.stringify(workflows, null, 3));
 
     const workflow = workflows.data.workflows.find(element => element.name == '.github/workflows/danger.yml') ?? {};
 
-    message('danger----> 222222222', JSON.stringify(workflow, null, 3));
-
-
-
-  })
-
-
-
+    console.log('danger----> 222222222', JSON.stringify(workflow, null, 3));
+  });
 
 //   danger.github.api.actions
 //     .getJobForWorkflowRun({
@@ -29,7 +24,6 @@ message(`<<<<====>>>>Changed Files in this PR: \n - ${modifiedMD}`);
 //       job_id: workflow.id
 //     })
 //     .then(d => message(`3333333 \n - ${JSON.stringify(d, null, 3)}`));
- 
 
 // console.log('danger--billing---> 1', danger.github.api.billing.getGithubActionsBillingOrg());
 // console.log('danger--billing---> 2', danger.github);
