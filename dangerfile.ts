@@ -29,15 +29,18 @@ danger.github.api.actions
   .listRepoWorkflows({
     owner: 'neerajpathak77',
     repo: 'danger-js-test'
-  }).then(d => message(`9999999999999999 \n - ${JSON.stringify(d, null, 3)}`));
+  })
+  .then(d => {
+    const id = d.workflows.find(({ name }) => name === '.github/workflows/danger.yml');
 
-// danger.github.api.actions
-//   .getJobForWorkflowRun({
-//     owner: 'neerajpathak77',
-//     repo: 'danger-js-test',
-//     job_id: 4843773123
-//   })
-//   .then(d => message(`9999999999999999 \n - ${JSON.stringify(d, null, 3)}`));
+    danger.github.api.actions
+      .getJobForWorkflowRun({
+        owner: 'neerajpathak77',
+        repo: 'danger-js-test',
+        job_id: id
+      })
+      .then(d => message(`9999999999999999 \n - ${JSON.stringify(d, null, 3)}`));
+  });
 
 // console.log('danger--billing---> 1', danger.github.api.billing.getGithubActionsBillingOrg());
 // console.log('danger--billing---> 2', danger.github);
