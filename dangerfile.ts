@@ -15,15 +15,21 @@ message(`<<<<====>>>>Changed Files in this PR: \n - ${modifiedMD}`);
 // console.log('danger-gvar---> 2', danger.github.thisPR.repo)
 // console.log('danger-gvar---> 3', danger.github.pr.user)
 
-const args = process.argv;
-console.log('====>>>', args);
+// const args = process.argv;
+// console.log('====>>>', args);
+
+// danger.github.api.actions
+//   .getActionsCacheList({
+//     owner: 'neerajpathak77',
+//     repo: 'danger-js-test'
+//   })
+//   .then(d => message(`9999999999999999 \n - ${JSON.stringify(d, null, 3)}`));
 
 danger.github.api.actions
-  .getActionsCacheList({
+  .listRepoWorkflows({
     owner: 'neerajpathak77',
     repo: 'danger-js-test'
-  })
-  .then(d => message(`9999999999999999 \n - ${JSON.stringify(d, null, 3)}`));
+  }).then(d => message(`9999999999999999 \n - ${JSON.stringify(d, null, 3)}`));
 
 // danger.github.api.actions
 //   .getJobForWorkflowRun({
