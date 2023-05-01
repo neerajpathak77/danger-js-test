@@ -81,3 +81,5 @@ danger.github.api.actions
 // console.log('danger--2', danger.github.api.billing);
 
 message(`<<<<====>>>>Changed Files in this PR:- ===>>>>>>>`);
+
+export const test = (): string => 'hello';
