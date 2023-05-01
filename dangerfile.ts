@@ -1,6 +1,21 @@
 /* eslint-disable promise/catch-or-return */
 import { message, danger } from 'danger';
 
+
+
+export const getTimeDiff = (start: Date, end: Date): any => {
+  const diffInSeconds = Math.floor((end.getTime() - start.getTime()) / 1000)
+  if (diffInSeconds <= 0) {
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 }
+  }
+  return {
+    days: Math.floor(diffInSeconds / 86400),
+    hours: Math.floor((diffInSeconds / 3600) % 24),
+    minutes: Math.floor((diffInSeconds / 60) % 60),
+    seconds: Math.floor(diffInSeconds % 60),
+  }
+}
+
 const modifiedMD = danger.git.modified_files.join('- ');
 message(`<<<<====>>>>Changed Files in this PR: \n - ${modifiedMD}`);
 
@@ -31,7 +46,17 @@ danger.github.api.actions
         const stepInfo = job?.steps?.find(step => step?.name === 'monitor step')
 
         console.log('danger----> INSIDE OF THE ACTION', JSON.stringify(stepInfo, null, 3));
-      });
+
+
+        const start = stepInfo?.started_at
+        const end = stepInfo?.completed_at
+
+
+        const ttt = getTimeDiff(new Date(start), new Date(end))
+
+        console.log('danger----> INSIDE OF THE ttt', ttt);
+
+       });
 
     // danger.github.api.actions.getJobForWorkflowRun({
     //     owner: 'neerajpathak77',
