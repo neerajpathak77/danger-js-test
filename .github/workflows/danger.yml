@@ -8,11 +8,22 @@ jobs:
       issues: read
     steps:
     - name: Checkout deployment action
-      id: step____1
+      id: step____0
       uses: actions/checkout@v3
+
+    - name: Checkout deployment action
+      id: step____1
+      run: |
+        npm i
+
+    - name: build website
+      id: step____2
+      run: |
+         npm run build
+
     # Use the output from the `hello` step
     - name: Get the output time
-      id: step____2
+      id: step____3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
@@ -26,7 +37,6 @@ jobs:
         echo "B: $B"
         echo "C: $C"
         echo "D: $D"
-        npm i
         npm run danger:test --hello=$D
 
         

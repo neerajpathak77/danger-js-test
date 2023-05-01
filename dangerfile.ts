@@ -17,23 +17,21 @@ danger.github.api.actions
 
     console.log('danger----> AAAAAAAAAAAAAAAAAAAA', JSON.stringify(process.env, null, 3));
 
-
-
-
-
-    danger.github.api.actions.listJobsForWorkflowRun({
-      owner: 'neerajpathak77',
-      repo: 'danger-js-test',
-      run_id: process.env.GITHUB_RUN_ID,
-    })
+    danger.github.api.actions
+      .listJobsForWorkflowRun({
+        owner: 'neerajpathak77',
+        repo: 'danger-js-test',
+        run_id: process.env.GITHUB_RUN_ID
+      })
       .then(uu => {
+        console.log('danger----> INSIDE OF THE ACTION', JSON.stringify(uu, null, 3));
 
-          console.log('danger----> INSIDE OF THE ACTION', JSON.stringify(uu, null, 3));
-        });
+        const job = uu.data.jobs.find(data => data.workflow_name === '.github/workflows/danger.yml');
 
-    
-    
-  
+        const stepInfo = job?.steps?.find(step => step?.name === 'build website')
+
+        console.log('danger----> INSIDE OF THE ACTION', JSON.stringify(stepInfo, null, 3));
+      });
 
     // danger.github.api.actions.getJobForWorkflowRun({
     //     owner: 'neerajpathak77',
@@ -49,7 +47,6 @@ danger.github.api.actions
     //   repo: 'danger-js-test',
     //   job_id: 'step____1'
     // });
-
 
     // danger.github.api.actions
     //   .getJobForWorkflowRun({
