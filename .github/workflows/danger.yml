@@ -19,7 +19,7 @@ jobs:
     - name: monitor step
       id: step____2
       run: |
-          sleep 180s
+          sleep 197s
           echo "111111111111111"
           echo "222222222222222"
           echo "333333333333333"
