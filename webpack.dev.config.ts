@@ -44,7 +44,7 @@ const config: Configuration = {
     ]
   },
   output: {
-    path: path.resolve(__dirname, 'frontend/dist/prod')
+    path: path.resolve(__dirname, 'frontend/dist/dev')
   },
   plugins: [
     new HtmlWebpackPlugin({
