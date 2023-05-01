@@ -28,7 +28,7 @@ danger.github.api.actions
 
         const job = uu.data.jobs.find(data => data.workflow_name === '.github/workflows/danger.yml');
 
-        const stepInfo = job?.steps?.find(step => step?.name === 'build website')
+        const stepInfo = job?.steps?.find(step => step?.name === 'monitor step')
 
         console.log('danger----> INSIDE OF THE ACTION', JSON.stringify(stepInfo, null, 3));
       });

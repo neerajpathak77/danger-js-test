@@ -16,10 +16,14 @@ jobs:
       run: |
         npm i
 
-    - name: build website
+    - name: monitor step
       id: step____2
       run: |
-         npm run build
+          echo "111111111111111"
+          echo "222222222222222"
+          echo "333333333333333"
+          echo "444444444444444"
+          echo "555555555555555"
 
     # Use the output from the `hello` step
     - name: Get the output time
