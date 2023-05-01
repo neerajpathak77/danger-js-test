@@ -15,7 +15,7 @@ danger.github.api.actions
     const workflow = workflows?.data?.workflows?.find(op => op.name === '.github/workflows/danger.yml');
     console.log('danger----> 11111111', JSON.stringify(workflow, null, 3));
 
-    console.log('danger----> 99999999999999', JSON.stringify(process.env, null, 3));
+    console.log('danger----> AAAAAAAAAAAAAAAAAAAA', JSON.stringify(process.env, null, 3));
 
 
 
