@@ -1,8 +1,6 @@
 /* eslint-disable promise/catch-or-return */
 import { message, danger } from 'danger';
 
-
-
 export const getTimeDiff = (start: Date, end: Date): any => {
   const diffInSeconds = Math.floor((end.getTime() - start.getTime()) / 1000)
   if (diffInSeconds <= 0) {
