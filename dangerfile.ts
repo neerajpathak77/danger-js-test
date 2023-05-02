@@ -15,8 +15,8 @@ const test = async ({ workflow, step, repo }): Promise<any> => {
   const { GITHUB_REPOSITORY_OWNER: owner, GITHUB_RUN_ID: run_id } = process.env;
   const workflowRun = await danger.github.api.actions.listJobsForWorkflowRun({
     owner,
-    repo,
-    run_id
+    repo: danger.github.pr.head.repo.name,
+    run_id: 4860709508
   });
 
   console.log('oooooooo---->>>', JSON.stringify(workflowRun, null, 3));
@@ -33,17 +33,15 @@ const test = async ({ workflow, step, repo }): Promise<any> => {
   }
 };
 
-console.log('aaaaaaooooooooaaaaaa---->>>', JSON.stringify(process.env, null, 3));
 
-
-const testTwo = async (): Promise<any> => {
-  // eslint-disable-next-line camelcase
+// const testTwo = async (): Promise<any> => {
+//   // eslint-disable-next-line camelcase
 
  
-  console.log('aaaaaaooooooooaaaaaa---->>>', JSON.stringify(danger.github.pr, null, 3));
+//   console.log('aaaaaaooooooooaaaaaa---->>>', JSON.stringify(danger.github.pr, null, 3));
 
-};
+// };
 
-testTwo()
+// testTwo();
 
-// test({ workflow: WORKFLOW_NAME, step: STEP_NAME, repo: REPO });
+test({ workflow: WORKFLOW_NAME, step: STEP_NAME, repo: REPO });
