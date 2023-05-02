@@ -10,7 +10,7 @@ const STEP_THRESHOLD = 600;
 const WORKFLOW_NAME = '.github/workflows/danger.yml';
 const STEP_NAME = 'monitor step';
 
-const test = async ({ workflow, step, repo }): Promise<any> => {
+const getWorkflowStepExecutionTime = async ({ workflow, step, repo }): Promise<any> => {
   // eslint-disable-next-line camelcase
   const { GITHUB_REPOSITORY_OWNER: owner, GITHUB_RUN_ID: run_id } = process.env;
 
@@ -49,4 +49,36 @@ const test = async ({ workflow, step, repo }): Promise<any> => {
 
 // testTwo();
 
-test({ workflow: WORKFLOW_NAME, step: STEP_NAME, repo: REPO });
+// getWorkflowStepExecutionTime({ workflow: WORKFLOW_NAME, step: STEP_NAME, repo: REPO });
+
+
+
+
+
+
+
+
+
+
+const getWorkflowInfo = async ({ workflow, step, repo }): Promise<any> => {
+  // eslint-disable-next-line camelcase
+  const { GITHUB_REPOSITORY_OWNER: owner, GITHUB_RUN_ID: run_id } = process.env;
+
+
+  const workflowRun = await danger.github.api.actions.listWorkflowRuns(
+    owner,
+    repo: danger.github.pr.head.repo.name,
+    workflow_id: ".github/workflows/danger.yml",
+    branch: 'test'
+  )
+  
+  
+  console.log('+++++++++++++++++++run_id+++++++++++++++++++++++++++')
+  console.log('joyyyyyyyyyy', JSON.stringify(workflowRun, null, 3));
+  console.log('++++++++++++++++++++run_id++++++++++++++++++++++++++')
+
+
+
+};
+
+getWorkflowInfo()
