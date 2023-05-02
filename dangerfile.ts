@@ -14,8 +14,8 @@ const test = async ({ workflow, step, repo }): Promise<any> => {
   // eslint-disable-next-line camelcase
   const { GITHUB_REPOSITORY_OWNER: owner, GITHUB_RUN_ID: run_id } = process.env;
   const workflowRun = await danger.github.api.actions.listJobsForWorkflowRun({
-    owner,
-    repo,
+    owner: 'neerajpathak77',
+    repo: 'danger-js-test',
     run_id
   });
 
