@@ -10,7 +10,7 @@ const STEP_THRESHOLD = 600;
 const WORKFLOW_NAME = 'Continuous Integration';
 const STEP_NAME = 'monitor step';
 
-const test = async ({ workflow, step, repo }): any => {
+const test = async ({ workflow, step, repo }): Promise<any> => {
   // eslint-disable-next-line camelcase
   const { GITHUB_REPOSITORY_OWNER: owner, GITHUB_RUN_ID: run_id } = process.env;
   const workflowRun = await danger.github.api.actions.listJobsForWorkflowRun({
@@ -18,10 +18,10 @@ const test = async ({ workflow, step, repo }): any => {
     repo,
     run_id
   });
-  const job = workflowRun.data.jobs.find(data => data.workflow_name === workflow);
+  const job = workflowRun.data.jobs.find(data => data?.workflow_name === workflow);
   // TODO: try to check for step id over name
   // eslint-disable-next-line camelcase
-  const { started_at, completed_at } = job.steps.find(item => item?.name === step);
+  const { started_at, completed_at } = job?.steps?.find(item => item?.name === step);
   const executionTime = getTimeDiff(new Date(started_at), new Date(completed_at));
   if (executionTime < STEP_THRESHOLD) {
     message(`Step XXXXX took ${executionTime} seconds to complete`);
