@@ -14,9 +14,9 @@ const getWorkflowStepExecutionTime = async ({ workflow, step, repo, runId }): Pr
   // eslint-disable-next-line camelcase
   const { GITHUB_REPOSITORY_OWNER: owner, GITHUB_RUN_ID: run_id } = process.env;
 
-  console.log('+++++++++++++++++++run_id+++++++++++++++++++++++++++')
+  console.log('+++++++++++++++++++run_id+++++++++++++++++++++++++++');
   console.log(run_id);
-  console.log('++++++++++++++++++++run_id++++++++++++++++++++++++++')
+  console.log('++++++++++++++++++++run_id++++++++++++++++++++++++++');
 
   const workflowRun = await danger.github.api.actions.listJobsForWorkflowRun({
     owner,
@@ -38,11 +38,9 @@ const getWorkflowStepExecutionTime = async ({ workflow, step, repo, runId }): Pr
   }
 };
 
-
 // const testTwo = async (): Promise<any> => {
 //   // eslint-disable-next-line camelcase
 
- 
 //   console.log('aaaaaaooooooooaaaaaa---->>>', JSON.stringify(danger.github.pr, null, 3));
 
 // };
@@ -51,36 +49,25 @@ const getWorkflowStepExecutionTime = async ({ workflow, step, repo, runId }): Pr
 
 // getWorkflowStepExecutionTime({ workflow: WORKFLOW_NAME, step: STEP_NAME, repo: REPO });
 
-
-
-
-
-
-
-
-
-
 const getWorkflowInfo = async (): Promise<any> => {
   // eslint-disable-next-line camelcase
   const { GITHUB_REPOSITORY_OWNER: owner, GITHUB_RUN_ID: run_id } = process.env;
-
 
   const workflowRun = await danger.github.api.actions.listWorkflowRuns({
     owner,
     // repo: danger.github.pr.head.repo.name,
     repo: danger.github.pr.head.repo.name,
-    workflow_id: ".github/workflows/danger.yml",
+    workflow_id: '.github/workflows/danger.yml',
     branch: 'test'
-})
+  });
 
-const targetWorkflow = data.workflow_runs.find(workflow => workflow.run_number === 106)
-  
-  console.log('+++++++++++++++++++run_id+++++++++++++++++++++++++++')
+  const targetWorkflow = workflowRun.data.workflow_runs.find(workflow => workflow.run_number === 106);
+
+  console.log('+++++++++++++++++++run_id+++++++++++++++++++++++++++');
   console.log('joyyyyyyyyyy', JSON.stringify(workflowRun, null, 3));
-  console.log('++++++++++++++++++++run_id++++++++++++++++++++++++++')
+  console.log('++++++++++++++++++++run_id++++++++++++++++++++++++++');
 
   getWorkflowStepExecutionTime({ workflow: WORKFLOW_NAME, step: STEP_NAME, repo: REPO, runId: targetWorkflow.id });
-
 };
 
-getWorkflowInfo()
+getWorkflowInfo();
