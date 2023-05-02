@@ -20,14 +20,9 @@ const test = async ({ workflow, step, repo }): Promise<any> => {
   });
 
   console.log('oooooooo---->>>', JSON.stringify(workflowRun, null, 3));
-
-
   const job = workflowRun.data.jobs.find(data => data?.workflow_name === workflow);
   // TODO: try to check for step id over name
   console.log('job---->>>', JSON.stringify(job, null, 3));
-
-
-
   // eslint-disable-next-line camelcase
   const { started_at, completed_at } = job?.steps?.find(item => item?.name === step);
   const executionTime = getTimeDiff(new Date(started_at), new Date(completed_at));
@@ -40,4 +35,15 @@ const test = async ({ workflow, step, repo }): Promise<any> => {
 
 console.log('aaaaaaooooooooaaaaaa---->>>', JSON.stringify(process.env, null, 3));
 
-test({ workflow: WORKFLOW_NAME, step: STEP_NAME, repo: REPO });
+
+const testTwo = async (): Promise<any> => {
+  // eslint-disable-next-line camelcase
+
+ 
+  console.log('aaaaaaooooooooaaaaaa---->>>', JSON.stringify(danger.github.pr, null, 3));
+
+};
+
+testTwo()
+
+// test({ workflow: WORKFLOW_NAME, step: STEP_NAME, repo: REPO });
