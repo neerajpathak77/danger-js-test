@@ -5,9 +5,9 @@ export const getTimeDiff = (start, end) => Math.floor((end.getTime() - start.get
 
 console.log('danger----> env', JSON.stringify(process.env, null, 3));
 
-const REPO = 'webmobile-pwa';
+const REPO = 'danger-js-test';
 const STEP_THRESHOLD = 600;
-const WORKFLOW_NAME = 'Continuous Integration';
+const WORKFLOW_NAME = '.github/workflows/danger.yml';
 const STEP_NAME = 'monitor step';
 
 const test = async ({ workflow, step, repo }): Promise<any> => {
