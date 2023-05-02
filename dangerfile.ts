@@ -18,8 +18,16 @@ const test = async ({ workflow, step, repo }): Promise<any> => {
     repo,
     run_id
   });
+
+  console.log('oooooooo---->>>', JSON.stringify(workflowRun, null, 3));
+
+
   const job = workflowRun.data.jobs.find(data => data?.workflow_name === workflow);
   // TODO: try to check for step id over name
+  console.log('job---->>>', JSON.stringify(job, null, 3));
+
+
+
   // eslint-disable-next-line camelcase
   const { started_at, completed_at } = job?.steps?.find(item => item?.name === step);
   const executionTime = getTimeDiff(new Date(started_at), new Date(completed_at));
