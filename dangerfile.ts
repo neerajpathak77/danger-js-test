@@ -38,4 +38,6 @@ const test = async ({ workflow, step, repo }): Promise<any> => {
   }
 };
 
+console.log('aaaaaaooooooooaaaaaa---->>>', JSON.stringify(process.env, null, 3));
+
 test({ workflow: WORKFLOW_NAME, step: STEP_NAME, repo: REPO });
