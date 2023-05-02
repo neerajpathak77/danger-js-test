@@ -60,17 +60,18 @@ const getWorkflowStepExecutionTime = async ({ workflow, step, repo }): Promise<a
 
 
 
-const getWorkflowInfo = async ({ workflow, step, repo }): Promise<any> => {
+const getWorkflowInfo = async (): Promise<any> => {
   // eslint-disable-next-line camelcase
   const { GITHUB_REPOSITORY_OWNER: owner, GITHUB_RUN_ID: run_id } = process.env;
 
 
-  const workflowRun = await danger.github.api.actions.listWorkflowRuns(
+  const workflowRun = await danger.github.api.actions.listWorkflowRuns({
     owner,
+    // repo: danger.github.pr.head.repo.name,
     repo: danger.github.pr.head.repo.name,
     workflow_id: ".github/workflows/danger.yml",
     branch: 'test'
-  )
+})
   
   
   console.log('+++++++++++++++++++run_id+++++++++++++++++++++++++++')
