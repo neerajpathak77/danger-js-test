@@ -13,10 +13,15 @@ const STEP_NAME = 'monitor step';
 const test = async ({ workflow, step, repo }): Promise<any> => {
   // eslint-disable-next-line camelcase
   const { GITHUB_REPOSITORY_OWNER: owner, GITHUB_RUN_ID: run_id } = process.env;
+
+  console.log('+++++++++++++++++++run_id+++++++++++++++++++++++++++')
+  console.log(run_id);
+  console.log('++++++++++++++++++++run_id++++++++++++++++++++++++++')
+
   const workflowRun = await danger.github.api.actions.listJobsForWorkflowRun({
     owner,
     repo: danger.github.pr.head.repo.name,
-    run_id: 4860709508
+    run_id
   });
 
   console.log('oooooooo---->>>', JSON.stringify(workflowRun, null, 3));
